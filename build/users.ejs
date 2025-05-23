@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Users</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="user-list">
+    <h3>Registered Users</h3>
+    <ul>
+      <% users.forEach(user => { %>
+        <li>
+          <strong><%= user.firstName %> <%= user.lastName %></strong><br>
+          Phone: <%= user.phone %><br>
+          Email: <%= user.email %>
+        </li>
+      <% }) %>
+    </ul>
+    <% if (currentUser) { %>
+      <a class="link" href="/logout">Logout</a>
+    <% } else { %>
+      <a class="link" href="/login">Login</a>
+    <% } %>
+  </div>
+</body>
+</html>
